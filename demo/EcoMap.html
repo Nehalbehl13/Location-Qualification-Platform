@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMap Insight - Part of the LQP Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>EcoMap Insight</h1>
+      <p>
+        Environmental and Community Impact Assessment Tool - Part of the LQP
+        Project
+      </p>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li>
+          <button onclick="toggleDropdown('env-dropdown')">
+            Environmental Sensitivity
+          </button>
+          <div id="env-dropdown" class="dropdown-content">
+            <p onclick="showModal('env-sensitivity')">
+              About Environmental Sensitivity
+            </p>
+            <button onclick="showEnvironmentalLayer()">
+              Show Sensitive Areas
+            </button>
+          </div>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('community-dropdown')">
+            Community Impact
+          </button>
+          <div id="community-dropdown" class="dropdown-content">
+            <p onclick="showModal('community-impact')">
+              About Community Impact
+            </p>
+            <button onclick="showCommunityLayer()">
+              Show Community Impact
+            </button>
+          </div>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('reg-dropdown')">
+            Regulatory Compliance
+          </button>
+          <div id="reg-dropdown" class="dropdown-content">
+            <p onclick="showModal('regulatory-compliance')">
+              About Regulatory Compliance
+            </p>
+            <button onclick="showComplianceLayer()">
+              Show Regulatory Data
+            </button>
+          </div>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('tools-dropdown')">
+            Additional Tools
+          </button>
+          <div id="tools-dropdown" class="dropdown-content">
+            <p onclick="showModal('additional-tools')">
+              About Additional Tools
+            </p>
+            <button onclick="clearLayers()">Clear All Layers</button>
+            <button onclick="toggleDraw()">Draw on Map</button>
+            <button onclick="exportMap()">Export Map</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="interactive">
+        <div id="map" class="map-container"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        EcoMap Insight - A Part of the Location Qualification Platform (LQP)
+        Project
+      </p>
+    </footer>
+
+    <!-- Modal for key aspect details -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-text"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="function.js"></script>
+  </body>
+</html>

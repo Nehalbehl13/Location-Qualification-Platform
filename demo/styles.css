@@ -1,0 +1,160 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #4caf50;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #4caf50;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10; /* Ensures the navbar is above the map */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.navbar button:hover {
+  background-color: #45a049;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 20; /* Ensures dropdown content is above the map */
+  border-radius: 5px;
+}
+
+.dropdown-content p,
+.dropdown-content button {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  background-color: #f4f4f4;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content button {
+  width: 100%;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.dropdown-content button:hover {
+  background-color: #45a049;
+}
+
+.dropdown-content p:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.map-container {
+  height: 600px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 5; /* Ensures the map is below the navbar and dropdowns */
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 30; /* Ensures the modal is above everything else */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
